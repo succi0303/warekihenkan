@@ -1,0 +1,39 @@
+<% provide(:title, 'Contact') %>
+
+<div class="container">
+  <section class="main">
+    <div class="row">
+      <aside class="col-md-3">
+      </aside>
+      <article class="col-md-9">
+        <header class="page-header">
+          <h1>お問い合わせ</h1>
+        </header>
+
+        <h3>連絡先</h3>
+
+        <p>
+          お問い合わせにつきましては、下記のTwitterアカウント宛てにメッセージをいただくか、ブログのコンタクトフォームよりご連絡をいただくようお願いいたします。
+        </p>
+
+        <dl>
+          <dt><i class="fa fa-twitter"></i> Twitter</dt>
+          <dd><%= link_to '@succi0303', my_twitter_path %></dd>
+          <dt><i class="fa fa-rss-square"></i> Blog</dt>
+          <dd><%= link_to 'prime factor', my_blog_path %></li></dd>
+        </dl>
+
+        <h3>ソースコード</h3>
+
+        <p>
+          本ウェブサイトのソースコードはGithubにて公開しています。ご興味を持たれた方は下記のGithubリポジトリをご参照ください。
+        </p>
+
+        <dl>
+          <dt><i class="fa fa-github"></i> Github</dt>
+          <dd><%= link_to 'succi0303/warekihenkan', my_repository_path %></dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+</div>
