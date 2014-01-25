@@ -33,4 +33,15 @@ describe StaticPagesController do
     it { should render_template(:contact) }
   end
 
+  describe 'GET search' do
+
+    let(:year) { FactoryGirl.create(:year) }
+    
+    before do
+      get :search, q: year.year_of_the_era
+    end
+
+    it { should be_success }
+  end
+
 end

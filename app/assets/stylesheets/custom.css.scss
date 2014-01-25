@@ -5,7 +5,7 @@ img {
   margin: 0 auto;
 }
 
-.main {
+section.main {
   margin-top: 40px;
 }
 
@@ -31,13 +31,24 @@ footer#site-footer {
   margin-top: 20px;
 }
 
+section#query-box {
+  margin-bottom: 20px;
+}
+
+section#info-box {
+  margin: 0 auto;
+  width: 40%;
+}
+
+section#answer-box {
+  text-align: center;
+  margin: 0 auto;
+  width: 30%;
+}
+
 /* top page */
 section#top-page {
   text-align: center;
-
-  section#query-box {
-    margin-bottom: 20px;
-  }
 }
 
 /* article */
@@ -48,3 +59,4 @@ article {
     }
   }
 }
+

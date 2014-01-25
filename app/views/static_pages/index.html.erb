@@ -13,15 +13,19 @@
   <div class="container">
 
     <section id="query-box">
+      <small>1868〜2014の範囲で西暦を入力してください</small>
       <form action="/search" method="get" class="form-inline" role="form">
         <div class="form-group">
           <label for"search-box" class="sr-only control-label">西暦</label>
-          <input class="form-control" type="text" name="q"
-            placeholder="西暦を入力してください" id="search-box">
+          <input type="number" name="q" class="form-control"
+          placeholder="西暦を入力" id="search-box"
+          value="<%= params[:q] %>"autofocus>
         </div>
         <button type="submit" class="btn btn-default">変換</button>
       </form>
     </section>
+
+    <%= render 'result', notice: @notice, alert: @alert, object: @years %>
 
   </div>
 

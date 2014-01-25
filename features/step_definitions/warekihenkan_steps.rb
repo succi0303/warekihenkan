@@ -11,7 +11,8 @@ When /^I am in contact page$/ do
 end
 
 When /^I fill in the year "([^"]*)"$/ do |input|
-  fill_in('input[text]', with: input)
+  fill_in('q', with: input)
+  click_button('変換')
 end
 
 Then /^I should see the page title "([^"]*)"$/ do |page_title|

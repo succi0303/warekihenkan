@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'csv'
+CSV.foreach('db/years.csv') do |row|
+  Year.create(
+    christian_era:   row[0],
+    name_of_era:     row[1],
+    year_of_the_era: row[2]
+  )
+end
