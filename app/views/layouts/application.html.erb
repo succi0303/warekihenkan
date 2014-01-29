@@ -12,6 +12,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <%=raw facebook_script_tag %>
+
   <%= render 'layouts/header' %>
 
   <%= yield %>

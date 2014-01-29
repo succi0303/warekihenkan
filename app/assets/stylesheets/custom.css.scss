@@ -26,10 +26,24 @@ div.jumbotron {
 }
 
 /* site-footer */
+
 footer#site-footer {
   text-align: center;
   margin-top: 20px;
+
+  /* social-buttons */
+
+  ul#social-buttons {
+    list-style: none;
+
+    li {
+      display: inline;
+      margin: 0 5px 0 0;
+      padding: 0;
+    }
+  }
 }
+
 
 section#query-box {
   margin-bottom: 20px;
