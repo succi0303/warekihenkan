@@ -1,3 +1,7 @@
+Given /^There is a initial data$/ do
+  FactoryGirl.create(:year)
+end
+
 When /^I am in top page$/ do
   visit '/'
 end
