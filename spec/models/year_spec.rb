@@ -2,55 +2,36 @@ require 'spec_helper'
 
 describe Year do
 
-  before do
-    @year = Year.new(
-      christian_era: 2014,
-      name_of_era: '平成',
-      year_of_the_era: 25
-    )
+  it "has valid factory" do
+    expect(build(:year)).to be_valid
   end
 
-  subject { @year }
-
-  it { should be_valid }
-
-  it { should respond_to :christian_era }
-  it { should respond_to :name_of_era }
-  it { should respond_to :year_of_the_era }
-
-  describe "when christian_era is not present" do
-    before { @year.christian_era = '' }
-    it { should_not be_valid }
+  it "is invalid without christian_era" do
+    expect(build(:year, christian_era: nil)).to have(2).errors_on(:christian_era)
   end
 
-  describe "when christian_era is negative" do
-    before { @year.christian_era = -1 }
-    it { should_not be_valid }
+  it "is invalid if christian_era is negative" do
+    expect(build(:year, christian_era: -1)).to have(1).errors_on(:christian_era)
   end
 
-  describe "when christian_era is zero" do
-    before { @year.christian_era = 0 }
-    it { should_not be_valid }
+  it "is invalid if christian_era is zero" do
+    expect(build(:year, christian_era: 0)).to have(1).errors_on(:christian_era)
   end
 
-  describe "when name_of_era is not present" do
-    before { @year.name_of_era = ' ' }
-    it { should_not be_valid }
+  it "is invalid without name_of_era" do
+    expect(build(:year, name_of_era: nil)).to have(1).errors_on(:name_of_era)
   end
 
-  describe "when year_of_the_era is not present" do
-    before { @year.year_of_the_era = '' }
-    it { should_not be_valid }
+  it "is invalid without year_of_the_era" do
+    expect(build(:year, year_of_the_era: nil)).to have(2).errors_on(:year_of_the_era)
   end
 
-  describe "when year_of_the_era is negative" do
-    before { @year.year_of_the_era = -1 }
-    it { should_not be_valid }
+  it "is invalid if year_of_the_era is negative" do
+    expect(build(:year, year_of_the_era: -1)).to have(1).errors_on(:year_of_the_era)
   end
 
-  describe "when year_of_the_era is zero" do
-    before { @year.year_of_the_era = 0 }
-    it { should_not be_valid }
+  it "is invalid if year_of_the_era is zero" do
+    expect(build(:year, year_of_the_era: 0)).to have(1).errors_on(:year_of_the_era)
   end
 
 end
